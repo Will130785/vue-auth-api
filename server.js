@@ -52,7 +52,8 @@ router.post('/register-admin', function (req, res) {
   const data = {
     name: req.body.name,
     email: req.body.email,
-    password: bcrypt.hashSync(req.body.password, 8)
+    password: bcrypt.hashSync(req.body.password, 8),
+    isAdmin: 1
   }
   User.create(data, function (err) {
     if (err) {
